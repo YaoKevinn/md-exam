@@ -1,8 +1,8 @@
 # MdExam
 
-- Install all dependencies and necesary package
-npm install
+## Install all dependencies and necessary package
+- npm install
 
-- Run the project
-ng serve
+## Run the project
+- ng serve
 
