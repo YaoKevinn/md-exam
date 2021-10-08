@@ -1,0 +1,34 @@
+<div class="comments-container">
+  <h3 class="comments-section-title">Comentarios</h3>
+  <div *ngFor="let comment of allComments" class="comment" [class.removable]="comment.removable">
+    <div class="name-section">
+      <img class="user-icon" src="/assets/icons/user.svg" alt="user">
+        <p class="comment-name">{{ comment.name }}</p>
+    </div>
+    <p class="comment-body">{{ comment.body }}</p>
+    <img *ngIf="comment.removable" class="delete-icon" src="/assets/icons/delete.svg" (click)="removeComment(comment.id)" alt="delete" />
+  </div>
+  <div class="emit-btn" (click)="setDate()">
+    <p>Emitir</p>
+  </div>
+  <div class="new-comment-section">
+    <h2 class="new-comment-title">Nuevo comentario</h2>
+    <div class="input-container">
+      <input type="text" placeholder="Nombre" [formControl]="nameControl" />
+    </div>
+    <div class="input-container">
+      <input type="text" placeholder="E-mail" [formControl]="mailControl" />
+    </div>
+    <div class="input-container">
+      <textarea rows="10" maxlength="500" type="text" placeholder="Agrega tus comentarios aqui..." [formControl]="commentControl"></textarea>
+      <p class="text-limit" [class.red]="newCommentTextLength >= 500">
+        {{ newCommentTextLength >= 500 ? 'Máximo longitud de texto alcanzado' : '' }}
+        <span class="bold">{{ newCommentTextLength }}/500</span>
+      </p>
+    </div>
+    <p *ngIf="showError" class="errorText">{{ errorMessage }}</p>
+    <div class="add-comment-btn" (click)="addComment()">
+      <p>Agregar</p>
+    </div>
+  </div>
+</div>

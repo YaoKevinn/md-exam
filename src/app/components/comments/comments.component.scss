@@ -1,0 +1,163 @@
+@import '/src/global.scss';
+
+.comments-container {
+  margin: 30px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .comments-section-title {
+    color: rgba($primary-color, 0.5);
+    align-self: flex-end;
+  }
+
+  .comment {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: rgba($primary-color, 0.05);
+    padding: 20px;
+    position: relative;
+
+    &.removable {
+      padding: 20px 35px 20px 20px;
+    }
+
+    .name-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .user-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+
+      .comment-name {
+        font-size: 16px;
+        font-weight: bold;
+        color: $primary-color;
+      }
+    }
+
+    .comment-body {
+      font-size: 16px;
+      color: $text-light;
+    }
+
+    .delete-icon {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+    }
+
+  }
+
+  .emit-btn {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: $primary-color;
+    border-radius: 20px;
+
+    &:hover {
+      box-shadow: 0 0 6px 1px $primary-color;
+    }
+
+    p {
+      color: $background-white;
+    }
+  }
+
+  .new-comment-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+
+    .new-comment-title {
+      color: rgba($primary-color, 0.5);
+      font-size: 19px;
+      align-self: flex-end;
+      margin-top: 20px;
+    }
+
+    .input-container {
+      width: 94%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 3%;
+      border-radius: 20px;
+      border: 1px solid $primary-color;
+
+      input {
+        width: 100%;
+        font-size: 16px;
+        outline: none;
+        border: none;
+      }
+
+      textarea {
+        flex: 1;
+        width: 100%;
+        font-size: 16px;
+        outline: none;
+        border: none;
+        resize: none;
+      }
+
+      .text-limit {
+        align-self: flex-end;
+
+        &.red {
+          color:$error-red;
+        }
+
+        .bold {
+          font-weight: 600;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .errorText {
+      position: absolute;
+      color: $error-red;
+      text-align: center;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 235px;
+    }
+
+    .add-comment-btn {
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      padding: 10px 20px;
+      margin-top: 30px;
+      cursor: pointer;
+      background-color: $primary-color;
+      border-radius: 20px;
+
+      &:hover {
+        box-shadow: 0 0 6px 1px $primary-color;
+      }
+
+      p {
+        color: $background-white;
+      }
+    }
+  }
+}

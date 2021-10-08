@@ -1,0 +1,52 @@
+@import '/src/global.scss';
+
+.not-found-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .not-found-section {
+    background-color: $background-white;
+    width: 50%;
+    height: 80vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      height: 100vh;
+    }
+
+    img {
+      width: 70%;
+    }
+
+    .not-found-text {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+
+    .home-btn {
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: $primary-color;
+      border-radius: 20px;
+
+      &:hover {
+        box-shadow: 0 0 6px 1px $primary-color;
+      }
+
+      p {
+        color: $background-white;
+      }
+    }
+
+  }
+}

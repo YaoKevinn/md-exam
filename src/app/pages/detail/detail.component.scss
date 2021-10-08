@@ -1,0 +1,102 @@
+@import '/src/global.scss';
+
+.detail-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .detail-section {
+    background-color: $background-white;
+    width: 50%;
+    height: 80vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      height: 100vh;
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgba($primary-color, 0.3);
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba($primary-color, 0.8);
+    }
+
+    .detail-header {
+      width: 90%;
+      padding: 5% 5% 2%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .back-btn {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        .back-btn-arrow {
+          transform: rotate(180deg)
+        }
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        .last-comment {
+          margin-right: 20px;
+          font-size: 13px;
+          font-weight: bold;
+          color: rgba($primary-color, 0.5);
+        }
+
+        .id-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          background-color: rgba($primary-color, 0.3);
+          width: 30px;
+          height: 30px;
+
+          .post-id {
+            font-size: 14px;
+            color: $background-white;
+          }
+        }
+      }
+    }
+
+    .detail-body-section {
+      display: flex;
+      flex-direction: column;
+      padding: 3% 5% 5% 5%;
+      position: relative;
+
+      .detail-title {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: $primary-color;
+      }
+
+      .detail-body {
+        color: $text-light;
+        font-size: 16px;
+      }
+
+    }
+
+  }
+}

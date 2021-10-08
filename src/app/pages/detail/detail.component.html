@@ -1,0 +1,21 @@
+<div class="detail-container">
+  <div class="detail-section">
+    <div class="detail-header">
+      <div class="back-btn" routerLink="/posts">
+        <img class="back-btn-arrow" src="/assets/icons/arrow-left.svg" alt="arrow">
+        <p class="back-btn-text">Volver</p>
+      </div>
+      <div class="right">
+        <p *ngIf="currentDate" class="last-comment">Último comentario: {{ currentDate }}</p>
+        <div class="id-container">
+          <p class="post-id">{{ postId }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-body-section">
+      <p class="detail-title">{{ post.title }}</p>
+      <p class="detail-body">{{ post.body }}</p>
+      <app-comments [id]="postId" (dateEvent)="setCurrentDate($event)"></app-comments>
+    </div>
+  </div>
+</div>
